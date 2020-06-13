@@ -4,10 +4,10 @@
 # 2020.5.6
 
 # 先去VPS上去执行一些初始操作 ( 如下以 Ubuntu 16.04 LTS 64bit为例 )
-# passwd								# 改密码
-# echo "Koc" > /etc/hostname  			# 修改机器名	
+# passwd				# 改密码
+# echo "Koc" > /etc/hostname  		# 修改机器名	
 # echo 127.0.0.1 Koc >> /etc/hosts      # 修改解析
-# shutdown -r now   					# 最后,重启系统使之生效
+# shutdown -r now   			# 最后,重启系统使之生效
 
 # 执行脚本 [ 用source执行 ]
 # source ./VPS_Env_install.sh
