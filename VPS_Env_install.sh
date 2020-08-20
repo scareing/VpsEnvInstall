@@ -383,6 +383,18 @@ if [ $? -eq 0 ] ;then
 	echo -e "\e[92mleafpad已安装成功!  \e[0m\n" && sleep 2 && cd
 fi
 
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
+if [ $? -eq 0 ] ;then
+	rm msfinstall &&  sleep 1
+	if [ $? -eq 0 ] ;then
+		echo -e "\e[94mmsfconsole 已安装成功 ! \e[0m\n" && sleep 2
+	else
+		echo -e "msfconsole 安装失败 !"
+		exit
+	fi
+fi
+
+
 echo -e "=========================================================================================================\n"
 # 清除所有操作记录,方便日后快速排查问题
 history -c –w && > .bash_history && cat /dev/null > /var/log/wtmp && cat /dev/null > /var/log/btmp && cat /dev/null > /var/log/lastlog && cat /dev/null > /var/log/auth.log
