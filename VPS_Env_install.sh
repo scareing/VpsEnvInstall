@@ -378,12 +378,18 @@ if [ $? -eq 0 ] ;then
 	fi
 fi
 
+apt install leafpad
+if [ $? -eq 0 ] ;then
+	echo -e "\e[92mleafpad已安装成功!  \e[0m\n" && sleep 2 && cd
+fi
+
 echo -e "=========================================================================================================\n"
 # 清除所有操作记录,方便日后快速排查问题
 history -c –w && > .bash_history && cat /dev/null > /var/log/wtmp && cat /dev/null > /var/log/btmp && cat /dev/null > /var/log/lastlog && cat /dev/null > /var/log/auth.log
 if [ $? -eq 0 ] ;then
 	echo -e "\e[92m基础 VPS 环境现已全部部署完毕,玩的愉快 !  \e[0m\n" && sleep 2 && cd
 fi
+
 
 # 安装破解AWVS 13 [可选]
 # apt-get install libxdamage1 libgtk-3-0 libasound2 libnss3 libxss1 -y >/dev/null 2>&1
